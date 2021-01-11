@@ -1,0 +1,19 @@
+{
+  "generator-jhipster": {
+    "deploymentType": "kubernetes",
+    "gatewayType": "zuul",
+    "monitoring": "no",
+    "directoryPath": "../",
+    "appsFolders": ["Gateway", "CourseService"],
+    "clusteredDbApps": [],
+    "consoleOptions": [],
+    "serviceDiscoveryType": "eureka",
+    "dockerRepositoryName": "itrex",
+    "dockerPushCommand": "docker push",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "ingressDomain": "",
+    "istio": false,
+    "jwtSecretKey": "Nzg1M2U5ZDFhYTgwMTE0NGEzMWNhOTcwZDkyYzI3MGUzNjU1ZjUyNmE0ZWQ4YWQxZGViZWQ3ODdjMzc3OGQyYzhlYmZkOGM5OWNkMDZhY2I3OTA0YjE4MDk1MTBmOWQyMjY1Zg=="
+  }
+}

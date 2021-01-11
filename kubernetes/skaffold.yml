@@ -1,0 +1,15 @@
+apiVersion: skaffold/v1
+kind: Config
+build:
+  artifacts:
+    - image: itrex/gateway
+      context: ../Gateway
+      jib: {}
+    - image: itrex/courseservice
+      context: ../CourseService
+      jib: {}
+  tagPolicy:
+    envTemplate:
+      template: '{{.IMAGE_NAME}}:latest'
+deploy:
+  kustomize: {}
