@@ -27,6 +27,7 @@ default() {
     kubectl apply -f registry-${suffix}/
     kubectl apply -f gateway-${suffix}/
     kubectl apply -f courseservice-${suffix}/
+    kubectl apply -f mediaservice-${suffix}/
 
 }
 

@@ -1,0 +1,12 @@
+version: "2"
+services:
+  minio:
+    image: "minio/minio"
+    volumes:
+      - "./data:/data"
+    ports:
+      - "8087:9000"
+    environment:
+      MINIO_ACCESS_KEY: minio_itrex
+      MINIO_SECRET_KEY: minio_itrex_secret
+    command: server /data

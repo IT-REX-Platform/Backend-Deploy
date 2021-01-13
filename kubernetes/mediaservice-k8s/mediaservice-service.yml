@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mediaservice
+  namespace: default
+  labels:
+    app: mediaservice
+spec:
+  selector:
+    app: mediaservice
+  ports:
+    - name: http
+      port: 8082
