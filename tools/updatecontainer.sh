@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd ../docker-compose
+
 echo "Updating $1..."
 oldid=$(docker images --filter=reference="$1" --format "{{.ID}}")
 echo "Old ID is $oldid"
