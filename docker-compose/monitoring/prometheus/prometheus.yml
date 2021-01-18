@@ -12,15 +12,25 @@ global:
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets:
+          - localhost:9090
+  - job_name: 'gateway'
+    scrape_interval: 5s
+    metrics_path: /management/prometheus
+    static_configs:
+      - targets:
+          - gateway:8080
   - job_name: 'courseservice'
     scrape_interval: 5s
     metrics_path: /management/prometheus
     static_configs:
       - targets:
-          - courseservice:8081
-  - job_name: 'mediaservice'
-    scrape_interval: 5s
-    metrics_path: /management/prometheus
-    static_configs:
-      - targets:
-          - mediaservice:8082
+          - courseservice:8083
+  # - job_name: 'mediaservice'
+  #   scrape_interval: 5s
+  #   metrics_path: /management/prometheus
+  #   static_configs:
+  #     - targets:
+  #         - mediaservice:8082

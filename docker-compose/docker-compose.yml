@@ -83,7 +83,7 @@ services:
     extends:
       file: monitoring/monitoring.yml
       service: prometheus
-  grafana:
-    extends:
-      file: monitoring/monitoring.yml
-      service: grafana
+  # grafana:
+  #   extends:
+  #     file: monitoring/monitoring.yml
+  #     service: grafana
