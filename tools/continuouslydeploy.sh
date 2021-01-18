@@ -7,8 +7,10 @@ inotifywait -r -m /srv/Backend/cd/ -e create -e moved_to |
         	# this could be done a little better but i'm lazy
             if [ "$dir" = "/srv/Backend/cd/gateway/" ]; then
                 image="gateway"
-            elif [ "$dir" = "/srv/Backend/cd/orderbook/" ]; then
-                image="orderbook"
+            elif [ "$dir" = "/srv/Backend/cd/courseservice/" ]; then
+                image="courseservice"
+            elif [ "$dir" = "/srv/Backend/cd/mediaservice/" ]; then
+                image="mediaservice"
             fi;
             sh updatecontainer.sh "$image"
         fi;
