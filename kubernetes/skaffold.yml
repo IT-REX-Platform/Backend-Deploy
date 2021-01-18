@@ -8,6 +8,9 @@ build:
     - image: itrex/courseservice
       context: ../CourseService
       jib: {}
+    - image: itrex/mediaservice
+      context: ../MediaService
+      jib: {}
   tagPolicy:
     envTemplate:
       template: '{{.IMAGE_NAME}}:latest'

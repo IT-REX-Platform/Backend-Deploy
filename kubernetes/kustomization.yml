@@ -9,6 +9,9 @@ resources:
   - courseservice-k8s/courseservice-deployment.yml
   - courseservice-k8s/courseservice-service.yml
   - courseservice-k8s/courseservice-postgresql.yml
+  - mediaservice-k8s/mediaservice-deployment.yml
+  - mediaservice-k8s/mediaservice-service.yml
+  - mediaservice-k8s/mediaservice-postgresql.yml
   # service discovery eureka/consul
   - registry-k8s/jhipster-registry.yml
   - registry-k8s/application-configmap.yml

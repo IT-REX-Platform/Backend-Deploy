@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: courseservice-postgresql
+  name: mediaservice-postgresql
   namespace: default
   labels:
-    app: courseservice-postgresql
+    app: mediaservice-postgresql
 type: Opaque
 data:
   postgresql-password: NzczYmRjYjM5YWEwNGU2ZjRhOWQ0ZTY2OTU4NDAyZTE3NDhhMDkyNzcyMzUzMGE1NjM5OTUwOGZjODJi
@@ -12,17 +12,17 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: courseservice-postgresql
+  name: mediaservice-postgresql
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: courseservice-postgresql
+      app: mediaservice-postgresql
   template:
     metadata:
       labels:
-        app: courseservice-postgresql
+        app: mediaservice-postgresql
     spec:
       volumes:
         - name: data
@@ -32,11 +32,11 @@ spec:
           image: postgres:12.3
           env:
             - name: POSTGRES_USER
-              value: CourseService
+              value: MediaService
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: courseservice-postgresql
+                  name: mediaservice-postgresql
                   key: postgresql-password
           ports:
             - containerPort: 5432
@@ -55,10 +55,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: courseservice-postgresql
+  name: mediaservice-postgresql
   namespace: default
 spec:
   selector:
-    app: courseservice-postgresql
+    app: mediaservice-postgresql
   ports:
     - port: 5432
