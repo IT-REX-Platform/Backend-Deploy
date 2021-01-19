@@ -2,10 +2,13 @@ version: '2'
 services:
   prometheus:
     image: prom/prometheus:v2.18.1
+    user: "1000"
     volumes:
       - ./prometheus/:/etc/prometheus/
+      - /srv/prometheus/data:/prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
     ports:
       - 9090:9090
 #    network_mode: 'host' # to test locally running service
