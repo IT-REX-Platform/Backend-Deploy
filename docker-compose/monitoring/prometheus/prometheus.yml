@@ -28,9 +28,9 @@ scrape_configs:
     static_configs:
       - targets:
           - courseservice:8083
-  # - job_name: 'mediaservice'
-  #   scrape_interval: 5s
-  #   metrics_path: /management/prometheus
-  #   static_configs:
-  #     - targets:
-  #         - mediaservice:8082
+  - job_name: 'mediaservice'
+    scrape_interval: 5s
+    metrics_path: /management/prometheus
+    static_configs:
+      - targets:
+          - mediaservice:8082
