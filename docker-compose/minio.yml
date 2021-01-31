@@ -3,7 +3,7 @@ services:
   minio:
     image: "minio/minio"
     volumes:
-      - "/srv/minio/data:/data"
+      - "./data:/data"
     ports:
       - "8087:9000"
     environment:

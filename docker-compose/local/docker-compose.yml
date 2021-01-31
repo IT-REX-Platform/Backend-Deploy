@@ -77,13 +77,3 @@ services:
     extends:
       file: minio.yml
       service: minio
-      
-  # Monitoring
-  prometheus:
-    extends:
-      file: ../monitoring/monitoring.yml
-      service: prometheus
-  grafana:
-    extends:
-      file: ../monitoring/monitoring.yml
-      service: grafana
