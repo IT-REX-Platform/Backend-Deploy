@@ -5,8 +5,8 @@ services:
     volumes:
       - "./data:/data"
     ports:
-      - "8087:9000"
+      - "8087:8087"
     environment:
       MINIO_ACCESS_KEY: minio_itrex
       MINIO_SECRET_KEY: minio_itrex_secret
-    command: server /data
+    command: server --address ":8087" /data

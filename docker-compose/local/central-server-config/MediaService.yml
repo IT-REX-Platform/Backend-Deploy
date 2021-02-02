@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: DEBUG
     io.github.jhipster: DEBUG
-    de.uni_stuttgart.it_rex.backend: DEBUG
+    de.uni_stuttgart.it_rex.media: DEBUG
 
 eureka:
   instance:
@@ -44,8 +44,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./build/h2db/db/gateway;DB_CLOSE_DELAY=-1
-    username: Gateway
+    url: jdbc:h2:file:./build/h2db/db/mediaservice;DB_CLOSE_DELAY=-1
+    username: MediaService
     password:
     hikari:
       poolName: Hikari
@@ -79,7 +79,7 @@ spring:
         enabled: true
 
 server:
-  port: 8080
+  port: 8082
 
 # ===================================================================
 # JHipster specific properties
@@ -88,13 +88,6 @@ server:
 # ===================================================================
 
 jhipster:
-  gateway:
-    rate-limiting:
-      enabled: false
-      limit: 100000
-      duration-in-seconds: 3600
-    authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
-      app1: /api,/v2/api-docs # recommended dev configuration
   cache: # Cache configuration
     hazelcast: # Hazelcast distributed cache
       time-to-live-seconds: 3600
@@ -103,16 +96,17 @@ jhipster:
         enabled: false
         update-interval: 3
         url: http://localhost:8180/hazelcast-mancenter
-  # CORS is only enabled by default with the "dev" profile, so BrowserSync can access the API
-  cors:
-    allowed-origins: '*'
-    allowed-methods: '*'
-    allowed-headers: '*'
-    exposed-headers: 'Authorization,Link,X-Total-Count'
-    allow-credentials: true
-    max-age: 1800
+  # CORS is disabled by default on microservices, as you should access them through a gateway.
+  # If you want to enable it, please uncomment the configuration below.
+  # cors:
+  #     allowed-origins: "*"
+  #     allowed-methods: "*"
+  #     allowed-headers: "*"
+  #     exposed-headers: "Authorization,Link,X-Total-Count"
+  #     allow-credentials: true
+  #     max-age: 1800
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://127.0.0.1:8080
+    base-url: http://127.0.0.1:8082
   metrics:
     logs: # Reports metrics in the logs
       enabled: false
