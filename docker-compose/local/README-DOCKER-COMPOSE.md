@@ -1,8 +1,22 @@
-# JHipster generated Docker-Compose configuration
+# Docker-Compose configuration
+
+## Prerequisites
+
+Adjust your hosts file (/etc/hosts under Linux, C:\Windows\System32\drivers\etc\hosts under Windows) to include the following entries:
+
+```
+127.0.0.1	keycloak
+127.0.0.1	jhipster-registry
+127.0.0.1	minio
+
+```
 
 ## Usage
 
-Launch all your infrastructure by running: `docker-compose up -d`.
+Launch all your infrastructure as Docker containers by running: `docker-compose -f launch_for_services_inside_docker.yml up -d`.
+For debugging and development you might want to only set up the environment for your services to run locally on your host machine.
+To do so, run: `docker-compose -f launch_for_services_outside_docker.yml up -d` and then launch the Gateway and your microservices 
+through IntelliJ / Gradle.
 
 ## Configured Docker services
 
@@ -22,3 +36,4 @@ Launch all your infrastructure by running: `docker-compose up -d`.
 ### Additional Services:
 
 - [Keycloak server](http://localhost:9080)
+- [MinIO server](http://localhost:8087)

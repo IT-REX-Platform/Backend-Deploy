@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd ../docker-compose
+cd ../docker-compose/vserver
 
 echo "Updating $1..."
 oldid=$(docker images --filter=reference="$1" --format "{{.ID}}")
