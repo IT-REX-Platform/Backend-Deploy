@@ -1,4 +1,4 @@
-version: "3.8"
+version: '2'
 services:
   jhipster-registry:
     image: jhipster/jhipster-registry:v6.6.0
@@ -26,7 +26,7 @@ services:
     ports:
       - 8761:8761
   keycloak:
-    image: jboss/keycloak:11.0.1
+    image: jboss/keycloak:10.0.0
     command:
       [
         "-b",
