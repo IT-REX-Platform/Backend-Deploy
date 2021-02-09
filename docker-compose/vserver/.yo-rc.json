@@ -6,10 +6,9 @@
     "directoryPath": "../",
     "appsFolders": ["Gateway", "CourseService", "MediaService"],
     "clusteredDbApps": [],
-    "consoleOptions": [],
     "serviceDiscoveryType": "eureka",
     "dockerRepositoryName": "itrex",
     "dockerPushCommand": "docker push",
-    "jwtSecretKey": "MmVlYzczOTg3NWE1Njk3M2M5ZWJkZjkwNGVlZjEzYWYzZjI5ZTQ3ZGQ4NGQ0Njg0NWE3NGM3OGE3OGRlMWJkMTE1YWU4NDg2YmZiNGE3MTkxOGU4YWFkNmEyYmU1Y2JiZjhhZA=="
+    "jwtSecretKey": "ZDU1OTJlZThmZDA5ZWU0NGU4NjVkYjYwNzlkMDJmYmRhYmJlYzNjZmQyYzJmY2I5MDJlMDQ1ZjI1ZTliNGEyMmQ5MWQxNWZjN2ZhOWQ4OTRmOTYwNWQ5M2E0YjFhZTFkN2IwOA=="
   }
 }
