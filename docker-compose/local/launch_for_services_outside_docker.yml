@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   jhipster-registry:
     extends:
@@ -12,3 +12,23 @@ services:
     extends:
       file: minio.yml
       service: minio
+
+  opencast-postgresql:
+    extends:
+      file: opencast.yml
+      service: opencast-postgresql
+
+  opencast-activemq:
+    extends:
+      file: opencast.yml
+      service: opencast-activemq
+
+  opencast-elasticsearch:
+    extends:
+      file: opencast.yml
+      service: opencast-elasticsearch
+
+  opencast:
+    extends:
+      file: opencast.yml
+      service: opencast
