@@ -14,11 +14,6 @@
 
 version: "2"
 
-volumes:
-  opencast-db:
-  opencast-elastic:
-  opencast-data:
-
 services:
   opencast-postgresql:
     image: postgres:13-alpine

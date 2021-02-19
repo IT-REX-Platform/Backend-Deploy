@@ -1,5 +1,10 @@
 version: "2"
 
+volumes:
+  opencast-db:
+  opencast-elastic:
+  opencast-data:
+
 services:
   gateway:
     image: gateway
