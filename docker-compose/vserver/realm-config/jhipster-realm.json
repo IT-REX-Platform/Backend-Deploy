@@ -493,6 +493,7 @@
       "realmRoles": ["offline_access", "uma_authorization"],
       "clientRoles": {
         "internal": ["uma_protection"],
+        "realm-management": ["realm-admin"],
         "account": ["view-profile", "manage-account"]
       },
       "notBefore": 0,
