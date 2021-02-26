@@ -4,31 +4,40 @@ services:
     extends:
       file: jhipster-registry.yml
       service: jhipster-registry
+
   keycloak:
     extends:
       file: keycloak.yml
       service: keycloak
+    depends_on:
+      - keycloakdb
+
+  keycloakdb:
+    extends:
+      file: keycloak.yml
+      service: keycloakdb
+
   minio:
     extends:
       file: minio.yml
       service: minio
 
-  opencast-postgresql:
-    extends:
-      file: opencast.yml
-      service: opencast-postgresql
+  # opencast-postgresql:
+  #   extends:
+  #     file: opencast.yml
+  #     service: opencast-postgresql
 
-  opencast-activemq:
-    extends:
-      file: opencast.yml
-      service: opencast-activemq
+  # opencast-activemq:
+  #   extends:
+  #     file: opencast.yml
+  #     service: opencast-activemq
 
-  opencast-elasticsearch:
-    extends:
-      file: opencast.yml
-      service: opencast-elasticsearch
+  # opencast-elasticsearch:
+  #   extends:
+  #     file: opencast.yml
+  #     service: opencast-elasticsearch
 
-  opencast:
-    extends:
-      file: opencast.yml
-      service: opencast
+  # opencast:
+  #   extends:
+  #     file: opencast.yml
+  #     service: opencast

@@ -9,7 +9,8 @@ services:
         '-Dkeycloak.migration.action=import',
         '-Dkeycloak.migration.provider=dir',
         '-Dkeycloak.migration.dir=/opt/jboss/keycloak/realm-config',
-        '-Dkeycloak.migration.strategy=OVERWRITE_EXISTING',
+        # '-Dkeycloak.migration.strategy=OVERWRITE_EXISTING',
+        '-Dkeycloak.migration.strategy=IGNORE_EXISTING',
         '-Djboss.socket.binding.port-offset=1000',
         '-Dkeycloak.profile.feature.upload_scripts=enabled',
       ]
@@ -18,8 +19,20 @@ services:
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
-      - DB_VENDOR=h2
+      - DB_VENDOR=POSTGRES
+      - DB_ADDR=keycloakdb
+      - DB_DATABASE=keycloak
+      - DB_USER=keycloak
+      - DB_SCHEMA=public
+      - DB_PASSWORD=k3ycl04k
     ports:
       - 9080:9080
       - 9443:9443
       - 10990:10990
+
+  keycloakdb:
+    image: postgres:12.3
+    environment:
+      - POSTGRES_USER=keycloak
+      - POSTGRES_PASSWORD=k3ycl04k
+      - POSTGRES_DB=keycloak
