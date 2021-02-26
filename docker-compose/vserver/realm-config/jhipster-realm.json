@@ -29,7 +29,7 @@
   "loginWithEmailAllowed": true,
   "duplicateEmailsAllowed": false,
   "resetPasswordAllowed": false,
-  "editUsernameAllowed": false,
+  "editUsernameAllowed": true,
   "bruteForceProtected": false,
   "permanentLockout": false,
   "maxFailureWaitSeconds": 900,
@@ -78,7 +78,7 @@
       },
       {
         "id": "7ae89ccf-5c60-457e-871d-695ade2bf5ff",
-        "name": "ITREX_STUDENT",
+        "name": "ROLE_ITREX_STUDENT",
         "composite": false,
         "clientRole": false,
         "containerId": "jhipster",
@@ -86,7 +86,7 @@
       },
       {
         "id": "b86fc0af-bb83-4484-bf65-f35a197ac6f4",
-        "name": "ITREX_ADMIN",
+        "name": "ROLE_ITREX_ADMIN",
         "composite": false,
         "clientRole": false,
         "containerId": "jhipster",
@@ -94,7 +94,7 @@
       },
       {
         "id": "cf82ab92-ea4a-42a2-99e2-00245dcacfbf",
-        "name": "ITREX_LECTURER",
+        "name": "ROLE_ITREX_LECTURER",
         "composite": false,
         "clientRole": false,
         "containerId": "jhipster",
@@ -427,7 +427,7 @@
       "name": "ITREX_Admins",
       "path": "/ITREX_Admins",
       "attributes": {},
-      "realmRoles": ["ITREX_ADMIN"],
+      "realmRoles": ["ROLE_ITREX_ADMIN"],
       "clientRoles": {},
       "subGroups": []
     },
@@ -436,7 +436,7 @@
       "name": "ITREX_Lecturers",
       "path": "/ITREX_Lecturers",
       "attributes": {},
-      "realmRoles": ["ITREX_LECTURER"],
+      "realmRoles": ["ROLE_ITREX_LECTURER"],
       "clientRoles": {},
       "subGroups": []
     },
@@ -445,7 +445,7 @@
       "name": "ITREX_Students",
       "path": "/ITREX_Students",
       "attributes": {},
-      "realmRoles": ["ITREX_STUDENT"],
+      "realmRoles": ["ROLE_ITREX_STUDENT"],
       "clientRoles": {},
       "subGroups": []
     }
@@ -905,20 +905,10 @@
       "clientAuthenticatorType": "client-secret",
       "secret": "web_app",
       "redirectUris": [
-        "http://localhost:8080/*",
-        "https://localhost:8080/*",
-        "http://localhost:8100/*",
-        "http://127.0.0.1:8761/*",
-        "http://localhost:9000/*",
-        "dev.localhost.ionic:*",
         "*"
       ],
       "webOrigins": [
-        "http://localhost:8080",
-        "https://localhost:8080",
-        "http://localhost:8100",
-        "http://127.0.0.1:8761",
-        "http://localhost:9000"
+        "*"
       ],
       "notBefore": 0,
       "bearerOnly": false,

@@ -4,7 +4,7 @@
     {
       "id": "4c973896-5761-41fc-8217-07c5d13a004b",
       "createdTimestamp": 1505479415590,
-      "username": "admin",
+      "username": "jhipster_admin",
       "enabled": true,
       "totp": false,
       "emailVerified": true,
@@ -51,7 +51,7 @@
     {
       "id": "c4af4e2f-b432-4c3b-8405-cca86cd5b97b",
       "createdTimestamp": 1505479373742,
-      "username": "user",
+      "username": "jhipster_user",
       "enabled": true,
       "totp": false,
       "emailVerified": true,
@@ -79,10 +79,13 @@
     {
       "id": "8ffdfa00-d07c-4c3f-baca-d744f4ad81d9",
       "createdTimestamp": 1612027427476,
-      "username": "itrexadmin",
+      "username": "admin",
       "enabled": true,
       "totp": false,
-      "emailVerified": false,
+      "emailVerified": true,
+      "firstName": "Alice",
+      "lastName": "Dinosaur",
+      "email": "Alice.Dinosaur@itrex",
       "credentials": [
         {
           "id": "01851ad2-e87d-4bfe-b206-7a30a8bd4e8f",
@@ -107,7 +110,10 @@
       "username": "lecturer",
       "enabled": true,
       "totp": false,
-      "emailVerified": false,
+      "emailVerified": true,
+      "firstName": "Bob",
+      "lastName": "Dinosaur",
+      "email": "Bob.Dinosaur@itrex",
       "credentials": [
         {
           "id": "34c3386d-529f-4764-9bc9-2f212a0d7542",
@@ -132,7 +138,10 @@
       "username": "student",
       "enabled": true,
       "totp": false,
-      "emailVerified": false,
+      "emailVerified": true,
+      "firstName": "Charlie",
+      "lastName": "Dinosaur",
+      "email": "Charlie.Dinosaur@itrex",
       "credentials": [
         {
           "id": "d348ab62-54cb-4399-8163-767768394003",
