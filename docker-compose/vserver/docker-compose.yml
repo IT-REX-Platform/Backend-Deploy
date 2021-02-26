@@ -75,10 +75,19 @@ services:
     extends:
       file: jhipster-registry.yml
       service: jhipster-registry
+
   keycloak:
     extends:
       file: keycloak.yml
       service: keycloak
+    depends_on:
+      - keycloakdb
+
+  keycloakdb:
+    extends:
+      file: keycloak.yml
+      service: keycloakdb
+
   minio:
     extends:
       file: minio.yml
