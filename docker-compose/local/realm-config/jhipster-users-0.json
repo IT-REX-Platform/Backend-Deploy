@@ -91,7 +91,7 @@
           "id": "01851ad2-e87d-4bfe-b206-7a30a8bd4e8f",
           "type": "password",
           "createdDate": 1612027438241,
-          "secretData": "{\"value\":\"PNeIf1xRJpcTv8jKI0z66set+eDeuEcPF83iHJdcpkw2GxhhB9P8Yegzs49SAmNJPb3YW2F2HJIZ/pk5qE3dqg==\",\"salt\":\"BJ81gLSPu/nIdgUhI4TvBw==\"}",
+          "secretData": "{\"value\":\"4pf9K2jWSCcHC+CwsZP/qidN5pSmDUe6AX6wBerSGdBVKkExay8MWKx+EKmaaObZW6FVsD8vdW/ZsyUFD9gJ1Q==\",\"salt\":\"1/qNkZ5kr77jOMOBPBogGw==\"}",
           "credentialData": "{\"hashIterations\":27500,\"algorithm\":\"pbkdf2-sha256\"}"
         }
       ],
