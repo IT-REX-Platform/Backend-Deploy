@@ -12,7 +12,7 @@ services:
       - "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster"
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=web_app
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=web_app
-      - JHIPSTER_SLEEP=30
+      - JHIPSTER_SLEEP=5
       - JHIPSTER_REGISTRY_PASSWORD=admin
     ports:
       - "8080:8080"
@@ -35,7 +35,7 @@ services:
       - "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster"
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=internal
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=internal
-      - JHIPSTER_SLEEP=30
+      - JHIPSTER_SLEEP=5
       - JHIPSTER_REGISTRY_PASSWORD=admin
     depends_on:
       - courseservice-postgresql
@@ -60,7 +60,7 @@ services:
       - "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster"
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=internal
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=internal
-      - JHIPSTER_SLEEP=30
+      - JHIPSTER_SLEEP=5
       - JHIPSTER_REGISTRY_PASSWORD=admin
   mediaservice-postgresql:
     image: "postgres:12.3"
@@ -77,11 +77,12 @@ services:
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
       - "EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka"
       - "SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config"
-      - "SPRING_DATASOURCE_URL=mongodb://quizservicedb:5432"
+      - "SPRING_DATA_MONGODB_URI=mongodb://quizservicedb:27017
+      - SPRING_DATA_MONGODB_DATABASE=QuizService
       - "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster"
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=internal
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=internal
-      - JHIPSTER_SLEEP=30
+      - JHIPSTER_SLEEP=5
       - JHIPSTER_REGISTRY_PASSWORD=admin
 
   quizservicedb:
