@@ -37,8 +37,12 @@ services:
       - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=internal
       - JHIPSTER_SLEEP=30
       - JHIPSTER_REGISTRY_PASSWORD=admin
+    depends_on:
+      - courseservice-postgresql
   courseservice-postgresql:
     image: "postgres:12.3"
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=CourseService
       - POSTGRES_PASSWORD=
@@ -64,6 +68,20 @@ services:
       - POSTGRES_USER=MediaService
       - POSTGRES_PASSWORD=
       - POSTGRES_HOST_AUTH_METHOD=trust
+
+  quizservice:
+    image: quizservice
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - "SPRING_PROFILES_ACTIVE=prod,swagger"
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - "EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka"
+      - "SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config"
+      - "SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_OIDC_ISSUER_URI=http://keycloak:9080/auth/realms/jhipster"
+      - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_ID=internal
+      - SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_OIDC_CLIENT_SECRET=internal
+      - JHIPSTER_SLEEP=30
+      - JHIPSTER_REGISTRY_PASSWORD=admin
 
   jhipster-registry:
     extends:
