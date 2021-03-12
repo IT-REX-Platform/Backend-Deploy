@@ -83,6 +83,20 @@ services:
       - JHIPSTER_SLEEP=30
       - JHIPSTER_REGISTRY_PASSWORD=admin
 
+  quizservicedb:
+    image: mongo:4.2.7
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8090:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=quizservicedb
+    #   ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    #   ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
   jhipster-registry:
     extends:
       file: jhipster-registry.yml
