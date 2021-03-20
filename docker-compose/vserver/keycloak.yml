@@ -17,7 +17,8 @@ services:
 #        '-Dkeycloak.forceBackendUrlToFrontendUrl=true',
       ]
     volumes:
-      - ./realm-config:/opt/jboss/keycloak/realm-config
+      - ./keycloak/realm-config:/opt/jboss/keycloak/realm-config
+      - ./../local/keycloak/themes:/opt/jboss/keycloak/themes/itrex
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin

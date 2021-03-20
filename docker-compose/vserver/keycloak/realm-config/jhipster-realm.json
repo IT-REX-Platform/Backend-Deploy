@@ -1488,6 +1488,10 @@
     "strictTransportSecurity": "max-age=31536000; includeSubDomains"
   },
   "smtpServer": {},
+  "loginTheme": "itrex",
+  "accountTheme": "itrex",
+  "adminTheme": "itrex",
+  "emailTheme": "itrex",
   "eventsEnabled": false,
   "eventsListeners": ["jboss-logging"],
   "enabledEventTypes": [],
