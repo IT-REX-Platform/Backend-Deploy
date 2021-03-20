@@ -1,6 +1,7 @@
 {
   "id": "jhipster",
   "realm": "jhipster",
+  "displayName": "IT-Rex",
   "notBefore": 0,
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
